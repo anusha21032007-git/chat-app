@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #07111f;
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #07111f;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 350px;
+  background: #081726;
+  border-right: 1px solid #1b2c40;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-top {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-top h1 {
+  color: white;
+  font-size: 52px;
+}
+
+.sidebar-top button {
+  background: #ff3b4d;
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-contact {
+  padding: 15px;
+  border-bottom: 1px solid #1d2d44;
+}
+
+.add-contact input {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  background: #162433;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.add-contact button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.chat-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chat-item {
+  display: flex;
+  gap: 15px;
+  padding: 18px;
+  border-bottom: 1px solid #1b2c40;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-item:hover {
+  background: #102236;
+}
+
+.chat-item img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-item h3 {
+  color: white;
+  font-size: 24px;
+}
+
+.chat-item p {
+  color: #b4c4d8;
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+.profile {
+  padding: 18px;
+  border-top: 1px solid #1b2c40;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: #102030;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.profile h3 {
+  color: white;
+  font-size: 22px;
+}
+
+.profile p {
+  color: #00ffae;
+}
+
+/* CHAT WINDOW */
+
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #03101d;
+}
+
+.chat-header {
+  height: 90px;
+  background: #162433;
+  border-bottom: 1px solid #1d2d44;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.chat-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.chat-user img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.chat-user h2 {
+  color: white;
+  font-size: 34px;
+}
+
+.chat-user p {
+  color: #00ff9d;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.message {
+  max-width: 350px;
+  background: #1d2c3c;
+  padding: 16px;
+  border-radius: 18px;
+  color: white;
+}
+
+.message.own {
+  align-self: flex-end;
+  background: #2563eb;
+}
+
+.message-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.message-user img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.message-input {
+  padding: 20px;
+  background: #162433;
+  display: flex;
+  gap: 15px;
+}
+
+.message-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #07111f;
+  padding: 18px;
+  border-radius: 16px;
+  color: white;
+  font-size: 16px;
+}
+
+.message-input button {
+  background: #2563eb;
+  border: none;
+  color: white;
+  padding: 0 30px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.empty-chat {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7f94aa;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .chat-window {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+  }
+
+  .chat-user h2 {
+    font-size: 24px;
+  }
+
+  .sidebar-top h1 {
+    font-size: 38px;
+  }
+
+  .message {
+    max-width: 85%;
+  }
+
+  .message-input {
+    padding: 12px;
+  }
+
+  .message-input input {
+    padding: 14px;
+  }
+
+  .message-input button {
+    padding: 0 20px;
+  }
+}
