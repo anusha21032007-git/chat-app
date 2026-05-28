@@ -396,13 +396,11 @@ function App() {
             </div>
           </>
         ) : (
-            <div className="empty-chat">
-              <h1>Add a contact to start chatting</h1>
-            </div>
-          )}
+          <div className="empty-chat">
+            <h1>Add a contact to start chatting</h1>
+          </div>
+        )}
       </div>
     </div>
   );
 }
-
-export default App;
