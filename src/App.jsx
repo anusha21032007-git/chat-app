@@ -205,6 +205,7 @@ function App() {
 
   return (
     <div className="app">
+      <h1 style={{ color: "red" }}>NEW VERSION</h1>
       {/* SIDEBAR */}
 
       <div className="sidebar">
@@ -395,12 +396,10 @@ function App() {
             </div>
           </>
         ) : (
-          <div className="empty-chat">
-            <h1>
-              Add a contact to start chatting
-            </h1>
-          </div>
-        )}
+            <div className="empty-chat">
+              <h1>Add a contact to start chatting</h1>
+            </div>
+          )}
       </div>
     </div>
   );
